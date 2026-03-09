@@ -1,13 +1,18 @@
 package com.ecommerce.monolith.product.service;
 
-import com.ecommerce.monolith.product.model.Product;
+import com.ecommerce.monolith.product.dto.CreateProductRequest;
+import com.ecommerce.monolith.product.dto.ProductDTO;
 import java.util.List;
-import java.util.Optional;
 
 public interface ProductService {
-    List<Product> getAllProducts();
-    Optional<Product> getProductById(Long id);
-    Product createProduct(Product product);
-    Product updateProduct(Long id, Product product);
+
+    List<ProductDTO> getAllProducts();
+
+    ProductDTO getProductById(Long id);
+
+    ProductDTO createProduct(CreateProductRequest request);
+
+    ProductDTO updateProduct(Long id, CreateProductRequest request);
+
     void deleteProduct(Long id);
 }
