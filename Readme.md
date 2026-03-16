@@ -1,4 +1,4 @@
-# TP2 – Architecture Distribuée
+# TP3 – Architecture Distribuée
 
 ## 📋 Description
 
