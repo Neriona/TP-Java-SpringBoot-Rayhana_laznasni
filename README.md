@@ -1,5 +1,6 @@
 # TP3 – Architecture Distribuée
-## 📄 Documentation> [!IMPORTANT]
+## 📄 Documentation
+> [!IMPORTANT]
 > **Pour consulter le rapport de TP :**
 > 1. Allez dans le fichier `Rapport_TP3_Architecture_Distribuée.pdf`
 > 2. Cliquez sur le bouton **Download** (ou l'icône flèche vers le bas) en haut à droite pour l'ouvrir correctement.
