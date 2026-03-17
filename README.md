@@ -1,6 +1,7 @@
 # TP3 – Architecture Distribuée
-## 📄 Documentation
-[Cliquez ici pour consulter le Rapport du TP3 (PDF)](./Rapport_TP3_Architecture_Distribuée.pdf)
+## 📄 Documentation> [!IMPORTANT]
+> **Pour consulter le rapport de TP :** > 1. Allez dans le fichier `Rapport_TP3_Architecture_Distribuée.pdf`
+> 2. Cliquez sur le bouton **Download** (ou l'icône flèche vers le bas) en haut à droite pour l'ouvrir correctement.
 ## 📋 Description
 
 Ce TP consiste à déployer une **architecture distribuée complète** avec 6 composants interconnectés. L'objectif est de comprendre le rôle de chaque composant et d'implémenter un flux complet : POST commande → stockage MongoDB → cache Redis → notification RabbitMQ.
