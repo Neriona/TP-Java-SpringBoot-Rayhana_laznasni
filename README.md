@@ -2,51 +2,69 @@
 
 Collection complète des travaux pratiques réalisés par **LAZNASNI RAYHANA** sous la supervision de **Pr. BE ELBAGHAZAOUI BAHAA**.
 
+---
+
 ## 📚 Travaux Pratiques
 
-### TP1 : Monolith Simple
-- **Architecture** : Monolithe simple avec Spring Boot.
+### [TP1 : Monolith Simple](TP1/)
+**Description** : Architecture monolithe simple avec Spring Boot
 
-### TP2 : Monolith Modulaire
-- **Architecture** : Monolithe avec Maven Modules.
-
-### TP3 : Architecture Distribuée
-- **Architecture** : Système de gestion de commandes distribué (RabbitMQ/Redis).
-
-### TP4 : SOA & Microservices (Spring Cloud)
-- **Architecture** : Microservices avec Gateway et Eureka.
+- **Code Source** : [TP1/code/](TP1/code/)
+- **Rapport & Documents** : [TP1/rapport/](TP1/rapport/)
+- **Technologies** : Spring Boot, Spring Data JPA, H2 Database
 
 ---
 
-## 👤 Informations Académiques
+### [TP2 : Monolith Modulaire](TP2/)
+**Description** : Architecture monolithe avec modules Maven séparés
 
-- **Étudiante** : LAZNASNI RAYHANA
-- **Filière** : AI & Cybersecurity (AICS)
-- **Institution** : ENSA Beni Mellal
-- **Module** : Architecture Logicielle
-- **Année** : 2025-2026
-
----
-
-## 📊 Résumé des Projets
-
-| TP | Dossier | Type | Status |
-|---|---|---|---|
-| TP1 | TP1_Monolith_Simple | Monolith | ✅ |
-| TP2 | TP2_Monolith_Modulaire | Monolith | ✅ |
-| TP3 | TP3_Archi_Distibuee_Commandes | Distribuée | ✅ |
-| TP4 | TP4_SOA | Microservices | ✅ |
+- **Code Source** : [TP2/code/](TP2/code/)
+- **Rapport & Documents** : [TP2/rapport/](TP2/rapport/)
+- **Technologies** : Spring Boot, Maven Modules, Spring Data JPA
 
 ---
 
-## 🚀 Comment Démarrer
+### [TP3 : Architecture Distribuée Commandes](TP3/)
+**Description** : Système distribué de gestion de commandes
 
-```bash
-# Cloner le dépôt
-git clone [https://github.com/Neriona/TP-Java-SpringBoot-Rayhana_laznasni.git](https://github.com/Neriona/TP-Java-SpringBoot-Rayhana_laznasni.git)
-cd TP-Java-SpringBoot-Rayhana_laznasni
+- **Code Source** : [TP3/code/](TP3/code/)
+- **Rapport & Documents** : [TP3/rapport/](TP3/rapport/)
+- **Technologies** : Microservices, Message Queues, Distributed Systems
 
-# Naviguer vers un TP (ex: TP4)
-cd TP4_SOA
-mvn clean install
-mvn spring-boot:run EOF
+---
+
+### [TP4 : Service Oriented Architecture (SOA)](TP4/)
+**Description** : Architecture microservices complète avec Spring Cloud
+
+**Services Implémentés** :
+- 🔧 Eureka Server (port 8761) - Service Discovery
+- 📦 Product Service (port 8081) - Gestion des produits
+- 📋 Order Service (port 8082) - Gestion des commandes
+- 🚪 API Gateway (port 8080) - Point d'entrée centralisé
+
+**Fonctionnalités** :
+- ✅ Exercise 1 : Stock Management avec validation
+- ✅ Exercise 2 : API Gateway avec routage intelligent
+
+**Fichiers** :
+- **Code Source** : [TP4/code/](TP4/code/)
+- **Rapport & Screenshots** : [TP4/rapport/](TP4/rapport/)
+- **Technologies** : Spring Cloud, Eureka, Feign, Spring Cloud Gateway
+
+**Tests** : 14 tests réussis ✓
+
+---
+
+## 📊 Résumé Complet
+
+| TP | Type | Technologies | Code | Rapport | Status |
+|---|---|---|---|---|---|
+| TP1 | Monolith | Spring Boot | [code/](TP1/code/) | [rapport/](TP1/rapport/) | ✅ |
+| TP2 | Monolith | Spring Boot, Modules | [code/](TP2/code/) | [rapport/](TP2/rapport/) | ✅ |
+| TP3 | Distribuée | Microservices | [code/](TP3/code/) | [rapport/](TP3/rapport/) | ✅ |
+| TP4 | SOA | Spring Cloud | [code/](TP4/code/) | [rapport/](TP4/rapport/) | ✅ |
+
+---
+
+## 📁 Structure du Dépôt
+
