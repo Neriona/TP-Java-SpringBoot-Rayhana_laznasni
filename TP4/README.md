@@ -43,7 +43,7 @@ This is a **Service-Oriented Architecture (SOA)** implementation of an e-commerc
    │ (8081)  │      │ (8082)  │    │   (8761)   │
    │         │      │         │    │            │
    │ H2 DB   │      │ H2 DB   │    │  Registry  │
-   └─────────┘      └─────────┘    └─���──────────┘
+   └─────────┘      └─────────┘    └─  ─────────┘
 ```
 
 ### 3. Prerequisites
