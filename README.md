@@ -1,98 +1,173 @@
-# TP1 Product Module
+ # TP2 : Restructuration en Monolithe Modulaire avec MapStruct
 
-A Java Spring Boot application for managing products and categories, built as part of my coursework.
+## 📋 Description
 
----
+Ce TP consiste à transformer l'application monolithique simple du TP1 en un **monolithe modulaire** bien structuré. L'objectif est d'appliquer les bonnes pratiques d'architecture logicielle en introduisant les **DTOs**, **MapStruct**, et une **séparation claire en modules** (Product, Customer, Order).
 
-## 🚀 Features
+## 🎯 Objectifs
 
-- Manage **Products**: add, list, update, and delete products.
-- Manage **Categories**: add, list, update, and delete categories.
-- Products are linked to categories (many-to-one relation).
-- RESTful API using Spring Boot.
+- Restructurer le code en modules indépendants
+- Introduire le pattern **DTO** (Data Transfer Object)
+- Utiliser **MapStruct** pour le mapping automatique Entity ↔ DTO
+- Appliquer le principe d'**interface/implémentation** pour les services
+- Assurer un **couplage faible** entre les modules
 
----
-
-## 🗄️ Technologies Used
-
-- Java 17+
-- Spring Boot
-- Spring Data JPA
-- H2 Database *(in-memory, for development)*
-- Maven
-
----
-
-## 📦 Project Structure
+## 🏗️ Architecture
 
 ```
-monolith/
-  └─ src/
-      ├─ main/
-      │   └─ java/
-      │       └─ com.ecommerce.monolith/
-      │            ├─ product/
-      │            └─ category/
-      └─ resources/
-          └─ application.properties
+com.ecommerce.monolith
+│
+├── product/              ← Module indépendant
+│   ├── controller/
+│   │   └── ProductController.java
+│   ├── dto/
+│   │   ├── ProductDTO.java
+│   │   └── CreateProductRequest.java
+│   ├── mapper/
+│   │   └── ProductMapper.java
+│   ├── model/
+│   │   └── Product.java
+│   ├── repository/
+│   │   └── ProductRepository.java
+│   └── service/
+│       ├── ProductService.java (interface)
+│       └── ProductServiceImpl.java
+│
+├── customer/             ← Module indépendant
+│   ├── controller/
+│   │   └── CustomerController.java
+│   ├── dto/
+│   │   ├── CustomerDTO.java
+│   │   └── CreateCustomerRequest.java
+│   ├── mapper/
+│   │   └── CustomerMapper.java
+│   ├── model/
+│   │   └── Customer.java
+│   ├── repository/
+│   │   └── CustomerRepository.java
+│   └── service/
+│       ├── CustomerService.java (interface)
+│       └── CustomerServiceImpl.java
+│
+├── order/                ← Dépend de Product & Customer (via interfaces)
+│   ├── controller/
+│   │   └── OrderController.java
+│   ├── dto/
+│   │   ├── OrderDTO.java
+│   │   ├── OrderItemDTO.java
+│   │   ├── CreateOrderRequest.java
+│   │   └── CreateOrderItemRequest.java
+│   ├── mapper/
+│   │   └── OrderMapper.java
+│   ├── model/
+│   │   ├── Order.java
+│   │   └── OrderItem.java
+│   ├── repository/
+│   │   └── OrderRepository.java
+│   └── service/
+│       ├── OrderService.java (interface)
+│       └── OrderServiceImpl.java
+│
+└── MonolithApplication.java
 ```
 
----
+## 📐 Diagramme des dépendances
 
-## 💻 How to Run Locally
-
-1. **Clone the repo**
-    ```bash
-    git clone https://github.com/Neriona/ecommerce-monolithTPSPRINGBOOT.git
-    cd ecommerce-monolithTPSPRINGBOOT/monolith
-    ```
-2. **Build and run (with Maven)**
-    ```bash
-    mvn spring-boot:run
-    ```
-
-3. **Access API**
-    - Visit [http://localhost:8080](http://localhost:8080)
-    - Test endpoints in Postman (see examples below).
-
----
-
-## 🔗 Example API Usage
-
-### Create a Category
-```http
-POST /api/categories
-Content-Type: application/json
-
-{
-  "name": "Périphériques"
-}
+```
+┌──────────────┐     ┌──────────────┐
+│   Product    │     │   Customer   │
+│   Module     │     │   Module     │
+│              │     │              │
+│ (indépendant)│     │ (indépendant)│
+└──────┬───────┘     └──────┬───────┘
+       │                    │
+       │   via interfaces   │
+       └────────┐  ┌────────┘
+                │  │
+         ┌──────▼──▼──────┐
+         │     Order      │
+         │     Module     │
+         │                │
+         │ Utilise :      │
+         │ - ProductService│
+         │ - CustomerService│
+         └────────────────┘
 ```
 
-### Create a Product
-```http
-POST /api/products
-Content-Type: application/json
+## 🛠️ Technologies utilisées
 
-{
-  "name": "Souris Gamer",
-  "description": "Souris optique RGB ultra-précise",
-  "price": 29.90,
-  "stock": 45,
-  "category": { "id": 1 }
-}
+| Technologie | Version | Rôle |
+|---|---|---|
+| Java | 17+ | Langage principal |
+| Spring Boot | 3.x | Framework backend |
+| Spring Data JPA | - | Accès aux données |
+| MapStruct | 1.5.5 | Mapping Entity ↔ DTO |
+| Lombok | - | Réduction du boilerplate |
+| H2 Database | - | Base de données en mémoire |
+| Maven | - | Gestion des dépendances |
+
+## 🚀 Endpoints API
+
+### Products (`/api/products`)
+| Méthode | URL | Description |
+|---|---|---|
+| GET | `/api/products` | Liste tous les produits |
+| GET | `/api/products/{id}` | Récupère un produit par ID |
+| POST | `/api/products` | Crée un nouveau produit |
+| PUT | `/api/products/{id}` | Met à jour un produit |
+| DELETE | `/api/products/{id}` | Supprime un produit |
+
+### Customers (`/api/customers`)
+| Méthode | URL | Description |
+|---|---|---|
+| GET | `/api/customers` | Liste tous les clients |
+| GET | `/api/customers/{id}` | Récupère un client par ID |
+| POST | `/api/customers` | Crée un nouveau client |
+| PUT | `/api/customers/{id}` | Met à jour un client |
+| DELETE | `/api/customers/{id}` | Supprime un client |
+
+### Orders (`/api/orders`)
+| Méthode | URL | Description |
+|---|---|---|
+| GET | `/api/orders` | Liste toutes les commandes |
+| GET | `/api/orders/{id}` | Récupère une commande par ID |
+| POST | `/api/orders` | Crée une nouvelle commande |
+| DELETE | `/api/orders/{id}` | Supprime une commande |
+
+## ▶️ Lancer le projet
+
+```bash
+cd monolith
+./mvnw spring-boot:run
 ```
 
----
+L'application sera accessible sur : `http://localhost:8080`
 
-## 📝 Author
+## 🧪 Exemples de requêtes
 
-- **Neriona** — [GitHub](https://github.com/Neriona)
+### Créer un produit
+```bash
+curl -X POST http://localhost:8080/api/products \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Laptop","description":"PC Portable","price":5000,"stock":10}'
+```
 
----
+### Créer un client
+```bash
+curl -X POST http://localhost:8080/api/customers \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Rayhana","email":"rayhana@ensa.ma","phone":"0600000000","address":"Beni Mellal"}'
+```
 
-## ☑️ TODO / Notes
+### Créer une commande
+```bash
+curl -X POST http://localhost:8080/api/orders \
+  -H "Content-Type: application/json" \
+  -d '{"customerId":1,"items":[{"productId":1,"quantity":2}]}'
+```
 
-- Add unit tests
-- Improve error handling
-- Add Swagger/OpenAPI documentation (optional)
+## 👩‍💻 Auteur
+
+- **Rayhana Laznasni**
+- ENSA Beni Mellal
+- Module : Architecture des Systèmes Distribués
