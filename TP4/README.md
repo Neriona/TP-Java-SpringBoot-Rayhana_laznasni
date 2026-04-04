@@ -819,7 +819,7 @@ curl http://localhost:8761/eureka/apps
 ### 12. Licence et crédits
 
 **Auteur:** laznasni rayhana  
-**Institution:** ENSA Marrakech  
+**Institution:** ENSA Beni Mellal  
 **Cours:** TP°4 - Architecture Orientée Services (SOA)  
 **Date:** 2026
 
