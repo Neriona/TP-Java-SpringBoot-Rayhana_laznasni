@@ -3,11 +3,9 @@
 ## Structure
 - **code/** - Code source
 - **rapport/** - Rapport
-# TP1 Product Module
+
 
 A Java Spring Boot application for managing products and categories, built as part of my coursework.
-
----
 
 ## 🚀 Features
 
