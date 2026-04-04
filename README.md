@@ -1,98 +1,70 @@
-# TP1 Product Module
+# Java & Spring Boot Projects - ENSA BM
 
-A Java Spring Boot application for managing products and categories, built as part of my coursework.
-
----
-
-## 🚀 Features
-
-- Manage **Products**: add, list, update, and delete products.
-- Manage **Categories**: add, list, update, and delete categories.
-- Products are linked to categories (many-to-one relation).
-- RESTful API using Spring Boot.
+Collection complète des travaux pratiques réalisés par **LAZNASNI RAYHANA** sous la supervision de **Pr. BE ELBAGHAZAOUI BAHAA**.
 
 ---
 
-## 🗄️ Technologies Used
+## 📚 Travaux Pratiques
 
-- Java 17+
-- Spring Boot
-- Spring Data JPA
-- H2 Database *(in-memory, for development)*
-- Maven
+### [TP1 : Monolith Simple](TP1/)
+**Description** : Architecture monolithe simple avec Spring Boot
 
----
-
-## 📦 Project Structure
-
-```
-monolith/
-  └─ src/
-      ├─ main/
-      │   └─ java/
-      │       └─ com.ecommerce.monolith/
-      │            ├─ product/
-      │            └─ category/
-      └─ resources/
-          └─ application.properties
-```
+- **Code Source** : [TP1/code/](TP1/code/)
+- **Rapport & Documents** : [TP1/rapport/](TP1/rapport/)
+- **Technologies** : Spring Boot, Spring Data JPA, H2 Database
 
 ---
 
-## 💻 How to Run Locally
+### [TP2 : Monolith Modulaire](TP2/)
+**Description** : Architecture monolithe avec modules Maven séparés
 
-1. **Clone the repo**
-    ```bash
-    git clone https://github.com/Neriona/ecommerce-monolithTPSPRINGBOOT.git
-    cd ecommerce-monolithTPSPRINGBOOT/monolith
-    ```
-2. **Build and run (with Maven)**
-    ```bash
-    mvn spring-boot:run
-    ```
-
-3. **Access API**
-    - Visit [http://localhost:8080](http://localhost:8080)
-    - Test endpoints in Postman (see examples below).
+- **Code Source** : [TP2/code/](TP2/code/)
+- **Rapport & Documents** : [TP2/rapport/](TP2/rapport/)
+- **Technologies** : Spring Boot, Maven Modules, Spring Data JPA
 
 ---
 
-## 🔗 Example API Usage
+### [TP3 : Architecture Distribuée Commandes](TP3/)
+**Description** : Système distribué de gestion de commandes
 
-### Create a Category
-```http
-POST /api/categories
-Content-Type: application/json
-
-{
-  "name": "Périphériques"
-}
-```
-
-### Create a Product
-```http
-POST /api/products
-Content-Type: application/json
-
-{
-  "name": "Souris Gamer",
-  "description": "Souris optique RGB ultra-précise",
-  "price": 29.90,
-  "stock": 45,
-  "category": { "id": 1 }
-}
-```
+- **Code Source** : [TP3/code/](TP3/code/)
+- **Rapport & Documents** : [TP3/rapport/](TP3/rapport/)
+- **Technologies** : Microservices, Message Queues, Distributed Systems
 
 ---
 
-## 📝 Author
+### [TP4 : Service Oriented Architecture (SOA)](TP4/)
+**Description** : Architecture microservices complète avec Spring Cloud
 
-- **Neriona** — [GitHub](https://github.com/Neriona)
+**Services Implémentés** :
+- 🔧 Eureka Server (port 8761) - Service Discovery
+- 📦 Product Service (port 8081) - Gestion des produits
+- 📋 Order Service (port 8082) - Gestion des commandes
+- 🚪 API Gateway (port 8080) - Point d'entrée centralisé
+
+**Fonctionnalités** :
+- ✅ Exercise 1 : Stock Management avec validation
+- ✅ Exercise 2 : API Gateway avec routage intelligent
+
+**Fichiers** :
+- **Code Source** : [TP4/code/](TP4/code/)
+- **Rapport & Screenshots** : [TP4/rapport/](TP4/rapport/)
+- **Technologies** : Spring Cloud, Eureka, Feign, Spring Cloud Gateway
+
+**Tests** : 14 tests réussis ✓
 
 ---
 
-## ☑️ TODO / Notes
+## 📊 Résumé Complet
 
-- Add unit tests
-- Improve error handling
-- Add Swagger/OpenAPI documentation (optional)
+| TP | Type | Technologies | Code | Rapport | Status |
+|---|---|---|---|---|---|
+| TP1 | Monolith | Spring Boot | [code/](TP1/code/) | [rapport/](TP1/rapport/) | ✅ |
+| TP2 | Monolith | Spring Boot, Modules | [code/](TP2/code/) | [rapport/](TP2/rapport/) | ✅ |
+| TP3 | Distribuée | Microservices | [code/](TP3/code/) | [rapport/](TP3/rapport/) | ✅ |
+| TP4 | SOA | Spring Cloud | [code/](TP4/code/) | [rapport/](TP4/rapport/) | ✅ |
+
+---
+
+## 📁 Structure du Dépôt
+
