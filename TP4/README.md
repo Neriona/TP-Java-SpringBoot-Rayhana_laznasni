@@ -1,6 +1,6 @@
 # TP°4 : Architecture Orientée Services (SOA) - E-Commerce
 
-**Université ENSA Beni Mellal** | Professeur: **Pr. BE ELBAGHAZAOUI**
+**Université ENSA Beni Mellal** 
 
 ## 📋 Table of Contents / Table des matières
 
