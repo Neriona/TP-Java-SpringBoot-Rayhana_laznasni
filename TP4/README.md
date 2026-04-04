@@ -1,6 +1,6 @@
 # TP°4 : Architecture Orientée Services (SOA) - E-Commerce
 
-**Université ENSA Marrakech** | Professeur: **Pr. BE ELBAGHAZAOUI**
+**Université ENSA Beni Mellal** | Professeur: **Pr. BE ELBAGHAZAOUI**
 
 ## 📋 Table of Contents / Table des matières
 
@@ -818,7 +818,7 @@ curl http://localhost:8761/eureka/apps
 
 ### 12. Licence et crédits
 
-**Auteur:** Pr. BE ELBAGHAZAOUI  
+**Auteur:** laznasni rayhana  
 **Institution:** ENSA Marrakech  
 **Cours:** TP°4 - Architecture Orientée Services (SOA)  
 **Date:** 2026
